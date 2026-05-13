@@ -70,8 +70,11 @@ def push_zero(arr):
             arr.append(0)
     return arr
 
-print(push_zero([0, 0]))
+print(push_zero([0,0,1]))
   
+
+
+d  
 
     
     

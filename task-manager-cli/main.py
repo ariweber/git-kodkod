@@ -79,3 +79,40 @@ def list_tasks(filename):
             list_task.append(pending)
         list_tasks.append(list_task)
     print(list_tasks)
+
+
+def main():
+    """Run the interactive task manager CLI."""
+    FILENAME = "tasks.txt"
+
+    while True:
+        print("\n=== To-Do List Manager ===")
+        print("1. Show tasks")
+        print("2. Add task")
+        print("3. Mark task as completed")
+        print("4. Exit")
+
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+             list_tasks(FILENAME)
+
+        elif choice == "2":
+            desc = input("Task description: ")
+            add_task(FILENAME, desc)
+            print("Task added successfully!")
+
+        elif choice == "3":
+            task_id = int(input("Task number: "))
+            complete_task(FILENAME, task_id)
+
+        elif choice == "4":
+            print("Goodbye!")
+            break
+
+        else:
+            print("Invalid choice")
+
+
+if __name__ == "__main__":
+    main()

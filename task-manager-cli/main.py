@@ -32,3 +32,21 @@ def save_tasks(filename, tasks):
         for task in tasks:
             line = f"{task['id']} | {task['status']} | {task['desc']}\n"
             f.write(line)
+
+
+def add_task(filename, description):
+    """Add a new task with PENDING status."""
+    tasks = load_tasks(filename)
+
+    if tasks:
+        new_id = int(tasks[-1]["id"]) + 1
+    else:
+        new_id = 1
+
+    tasks.append({
+        "id": new_id,
+        "status": "PENDING",
+        "desc": description
+    })
+    save_tasks(filename, tasks)
+    return

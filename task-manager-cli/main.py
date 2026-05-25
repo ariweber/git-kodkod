@@ -63,3 +63,19 @@ def complete_task(filename, task_id):
 
 
 complete_task("tasks.txt", "2")
+
+
+def list_tasks(filename):
+    """Display all tasks with their status."""
+    list_tasks = []
+    done = ["✅"]
+    pending = []
+    tasks = load_tasks(filename)
+    for task in tasks:
+        list_task = list(task.values())
+        if task["status"] == "DONE":
+            list_task.append(done)
+        elif task["status"] == "PENDING":
+            list_task.append(pending)
+        list_tasks.append(list_task)
+    print(list_tasks)

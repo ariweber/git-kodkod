@@ -50,3 +50,16 @@ def add_task(filename, description):
     })
     save_tasks(filename, tasks)
     return
+
+
+def complete_task(filename, task_id):
+    """Mark a task as DONE by its ID."""
+    tasks = load_tasks(filename)
+    for task in tasks:
+        if int(task["id"]) == task_id:
+            task["status"] = "DONE"
+    save_tasks(filename, tasks)
+    return
+
+
+complete_task("tasks.txt", "2")

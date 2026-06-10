@@ -19,6 +19,7 @@ def get_schema():
     return [{"column": row[0], "type": row[1]} for row in rows]
 
 
-print(get_schema())
+
+
 
 

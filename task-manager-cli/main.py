@@ -69,7 +69,7 @@ def list_tasks(filename):
     """Display all tasks with their status."""
     list_tasks = []
     done = ["✅"]
-    pending = []
+    pending = [" "]
     tasks = load_tasks(filename)
     for task in tasks:
         list_task = list(task.values())
@@ -78,7 +78,7 @@ def list_tasks(filename):
         elif task["status"] == "PENDING":
             list_task.append(pending)
         list_tasks.append(list_task)
-    print(list_tasks)
+        print(list_task)
 
 
 def main():
